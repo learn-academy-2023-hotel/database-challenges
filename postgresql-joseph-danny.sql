@@ -60,3 +60,45 @@ ORDER BY lifeexpectancy DESC
 LIMIT 15
 
 -- Which five countries have the lowest population density (density = population / surfacearea)? (HINT: starts with Greenland)
+SELECT name, population, surfacearea,
+population / surfacearea AS density
+FROM country
+WHERE population != 0
+ORDER BY density ASC
+LIMIT 5
+
+-- Which countries have the highest population density?(HINT: starts with Macao)
+SELECT name, population, surfacearea,
+population / surfacearea AS density
+FROM country
+WHERE population != 0
+ORDER BY density DESC
+
+-- Which is the smallest country by area? (HINT: .4)
+SELECT surfacearea
+FROM country
+WHERE surfacearea != 0
+ORDER BY surfacearea ASC
+LIMIT 1
+
+-- Which is the smallest country by population? (HINT: 50)?
+SELECT population
+FROM country
+WHERE population != 0
+ORDER BY population ASC
+LIMIT 1
+
+-- Which is the biggest country by area? (HINT: 1.70754e+07)
+SELECT surfacearea
+FROM country
+WHERE surfacearea != 0
+ORDER BY surfacearea DESC
+LIMIT 1
+
+-- Which is the biggest country by population? (HINT: 1277558000)
+SELECT population
+FROM country
+WHERE population != 0
+ORDER BY population DESC
+LIMIT 1
+
