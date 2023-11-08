@@ -65,19 +65,82 @@ LIMIT 15
 
 -- Which five countries have the lowest population density (density = population / surfacearea)? (HINT: starts with Greenland)
 
-
+SELECT name, population, surfacearea, 
+population / surfacearea AS density
+FROM country
+WHERE population > 0
+ORDER BY density ASC
+LIMIT 5
 
 -- Which countries have the highest population density?(HINT: starts with Macao)
+
+SELECT name, population, surfacearea, 
+population / surfacearea AS density
+FROM country
+WHERE population > 0
+ORDER BY density DESC
+LIMIT 5
+
 -- Which is the smallest country by area? (HINT: .4)
+
+Holy See (vatican City State)
+
 -- Which is the smallest country by population? (HINT: 50)?
+
+Pitcairn
+
 -- Which is the biggest country by area? (HINT: 1.70754e+07)
+
+Russian Federation
+
 -- Which is the biggest country by population? (HINT: 1277558000)
+
+China
+
 -- Who is the most influential head of state measured by population? (HINT: Jiang Zemin)
+
+SELECT name, population, headofstate
+FROM country
+ORDER BY population DESC
+LIMIT 1
+
+China
+
 -- Of the countries with the top 10 gnp, which has the smallest population? (HINT: Canada)
+
+SELECT name, population, gnp
+FROM country
+WHERE gnp > 0
+ORDER BY gnp DESC
+LIMIT 10
+ ===== refactor =======
 -- Of the 10 least populated countries with permanent residents (a non-zero population), which has the largest surfacearea? (HINT: Svalbard and Jan Mayen)
+
+SELECT name, population, surfacearea
+FROM country
+WHERE population > 0
+ORDER BY population ASC
+LIMIT 10
+
 -- Which region has the highest average gnp? (HINT: North America)
+
+SELECT region, gnp
+FROM country
+WHERE gnp > 0
+ORDER BY gnp DESC
+LIMIT 1
+
 -- Who is the most influential head of state measured by surface area? (HINT: Elisabeth II)
+
+SELECT headofstate, surfacearea
+FROM country
+WHERE surfacearea > 0
+ORDER BY surfacearea DESC
+==== refactor =======
+
 -- What is the average life expectancy for all continents?
+
+
 -- What are the most common forms of government? (HINT: use count(*))
 -- How many countries are in North America?
 -- What is the total population of all continents?
