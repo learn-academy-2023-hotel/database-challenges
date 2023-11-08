@@ -34,15 +34,39 @@ WHERE governmentform like '%Republic'
 
 -- Which countries are some kind of republic and achieved independence after 1945? (HINT: 92 entries)
 
-
+SELECT name, continent, governmentform
+FROM country
+WHERE governmentform like '%Republic' 
+AND indepyear > 1945
 
 -- Which countries achieved independence after 1945 and are not some kind of republic? (HINT: 27 entries)
 
+SELECT name, continent, governmentform
+FROM country
+WHERE governmentform NOT IN ('Republic', 'Federal Republic', 'Socialistic Republic', 'Islamic Republic')
+AND indepyear > 1945
 
+=== refactor ======
 
 -- Which fifteen countries have the lowest life expectancy? (HINT: starts with Zambia, ends with Sierra Leonne)
+
+SELECT name , lifeexpectancy
+FROM country 
+ORDER BY lifeexpectancy 
+LIMIT 15 
+
 -- Which fifteen countries have the highest life expectancy? (HINT: starts with Andorra, ends with Spain)
+
+SELECT name , lifeexpectancy
+FROM country 
+WHERE lifeexpectancy is not null
+ORDER BY lifeexpectancy DESC
+LIMIT 15 
+
 -- Which five countries have the lowest population density (density = population / surfacearea)? (HINT: starts with Greenland)
+
+
+
 -- Which countries have the highest population density?(HINT: starts with Macao)
 -- Which is the smallest country by area? (HINT: .4)
 -- Which is the smallest country by population? (HINT: 50)?
