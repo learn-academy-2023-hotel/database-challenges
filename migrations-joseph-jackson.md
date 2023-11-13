@@ -26,5 +26,27 @@ time: 3)
 
 
 As a developer, I can update the run_time column to be a string.
+class ChangeRunTimeOnMovie < ActiveRecord::Migration[7.0]
+  def change
+    change_column :movies, :run_time, :string
+  end
+end
+
 As a developer, I can update the values of the five existing database entries to include a unit of time on the run_time column. (Example: '165 minutes' or '1 hr, 45 minutes')
-As a developer, I can rename the column category to be named genre. -->
+Movie.all.update(run_time: "165 mins or 1 hr, 45 mins")
+
+As a developer, I can rename the column category to be named genre.
+class ChangeCategoryOnMovie < ActiveRecord::Migration[7.0]
+  def change
+    change_column :movies, :category, :string
+  end
+end
+
+class RenameCategoryOnMovie < ActiveRecord::Migration[7.0]
+  def change
+    rename_column :movies, :category, :genre
+  end
+end
+
+
+ -->
