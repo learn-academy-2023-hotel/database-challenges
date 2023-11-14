@@ -65,9 +65,22 @@ FROM country
 ORDER by surfacearea ASC
 LIMIT 1
 -- Which is the smallest country by population? (HINT: 50)?
+SELECT name, continent, population
+FROM country
+ORDER BY population ASC
+-- Pitcairn, 50
 -- Which is the biggest country by area? (HINT: 1.70754e+07)
+SELECT name, continent, surfacearea
+FROM country
+ORDER BY surfacearea DESC
+-- Russian Federation
 -- Which is the biggest country by population? (HINT: 1277558000)
+SELECT name, continent, surfacearea, population
+FROM country
+ORDER BY population DESC
+-- China
 -- Who is the most influential head of state measured by population? (HINT: Jiang Zemin)
+
 -- Of the countries with the top 10 gnp, which has the smallest population? (HINT: Canada)
 -- Of the 10 least populated countries with permanent residents (a non-zero population), which has the largest surfacearea? (HINT: Svalbard and Jan Mayen)
 -- Which region has the highest average gnp? (HINT: North America)
